@@ -7,12 +7,12 @@
    
    $title = $_POST['title'];	
    $storeArray = Array();
-   $result = mysqli_query($con,"SELECT title,description,address,price,category,username,email,phone
+   $result = mysqli_query($con,"SELECT description,address,price,category,username,email,phone
 								FROM houses WHERE title='$title'");
 								
 	$row = mysqli_fetch_array($result);
 	
-	for($i=0;$i<8;$i++){
+	for($i=0;$i<7;$i++){
 		echo $row[$i]."     ";   
    }
 	
