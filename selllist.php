@@ -6,14 +6,17 @@
    }
    
    $username = $_POST['username'];
+   
    $storeArray = Array();
    $result = mysqli_query($con,"SELECT title FROM houses WHERE username='$username'");
    while($row = mysqli_fetch_array($result)){
 	   $storeArray[] =  $row['title'];
    }
    
-   for($i=0;$i<count($storeArray);$i++){
-	echo $storeArray[$i]."  ";   
+   if($storeArray!=null){	   
+	for($i=0;$i<count($storeArray);$i++){
+		echo $storeArray[$i]."  ";   
+	}
    }
    
    mysqli_close($con);
